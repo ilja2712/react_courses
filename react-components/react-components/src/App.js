@@ -1,22 +1,14 @@
 import React, {useState} from 'react';
-
+import Clicker from './Clicker';
 
 function App() {
-const [count, setCount] = useState(0);
-
-const increment = () => {
-  setCount(count + 1);
-}
-
-const decrement = () => {
-  setCount(count - 1);
-}
+const [isClicker, setClicker] = useState(false);
 
   return (
     <div className="App">
-      <button onClick={decrement}>-</button>
-      <span>{count}</span>
-      <button onClick={increment}>+</button>
+      <h2>React App Clicker</h2>
+      <button onClick={() => setClicker(!isClicker) }>Toggle clicker</button>
+      {isClicker && <Clicker />}
     </div>
   );
 }
